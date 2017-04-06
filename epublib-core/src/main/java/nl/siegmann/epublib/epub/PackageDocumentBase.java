@@ -65,6 +65,7 @@ public class PackageDocumentBase {
 		String media_type = "media-type";
 		String title = "title";
 		String toc = "toc";
+		String page_progression_direction = "page-progression-direction";
 		String version = "version";
 		String scheme = "scheme";
 		String property = "property";

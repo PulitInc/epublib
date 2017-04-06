@@ -215,6 +215,8 @@ public class PackageDocumentReader extends PackageDocumentBase {
 		Spine result = new Spine();
 		String tocResourceId = DOMUtil.getAttribute(spineElement, NAMESPACE_OPF, OPFAttributes.toc);
 		result.setTocResource(findTableOfContentsResource(tocResourceId, resources));
+        String pageProgressionDirection = DOMUtil.getAttribute(spineElement, NAMESPACE_OPF, OPFAttributes.page_progression_direction);
+        result.setPageProgressionDirection(pageProgressionDirection);
 		NodeList spineNodes = packageDocument.getElementsByTagNameNS(NAMESPACE_OPF, OPFTags.itemref);
 		List<SpineReference> spineReferences = new ArrayList<SpineReference>(spineNodes.getLength());
 		for(int i = 0; i < spineNodes.getLength(); i++) {

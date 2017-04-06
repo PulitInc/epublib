@@ -72,6 +72,9 @@ public class PackageDocumentWriter extends PackageDocumentBase {
 	private static void writeSpine(Book book, EpubWriter epubWriter, XmlSerializer serializer) throws IllegalArgumentException, IllegalStateException, IOException {
 		serializer.startTag(NAMESPACE_OPF, OPFTags.spine);
 		serializer.attribute(EpubWriter.EMPTY_NAMESPACE_PREFIX, OPFAttributes.toc, book.getSpine().getTocResource().getId());
+		if(book.getSpine().getPageProgressionDirection() != null && book.getSpine().getPageProgressionDirection().length() > 0) {
+            serializer.attribute(EpubWriter.EMPTY_NAMESPACE_PREFIX, OPFAttributes.page_progression_direction, book.getSpine().getPageProgressionDirection());
+        }
 
 		if(book.getCoverPage() != null // there is a cover page
 			&&	book.getSpine().findFirstResourceById(book.getCoverPage().getId()) < 0) { // cover page is not already in the spine

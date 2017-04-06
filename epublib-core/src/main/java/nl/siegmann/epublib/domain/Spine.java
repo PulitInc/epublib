@@ -24,6 +24,7 @@ public class Spine implements Serializable {
 	 */
 	private static final long serialVersionUID = 3878483958947357246L;
 	private Resource tocResource;
+	private String pageProgressionDirection;
 	private List<SpineReference> spineReferences;
 
 	public Spine() {
@@ -147,7 +148,15 @@ public class Spine implements Serializable {
 		return tocResource;
 	}
 
-	/**
+    public String getPageProgressionDirection() {
+        return pageProgressionDirection;
+    }
+
+    public void setPageProgressionDirection(String pageProgressionDirection) {
+        this.pageProgressionDirection = pageProgressionDirection;
+    }
+
+    /**
 	 * The position within the spine of the given resource.
 	 * 
 	 * @param currentResource
