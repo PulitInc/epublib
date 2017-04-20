@@ -76,10 +76,10 @@ public class EpubProcessorSupport {
 	public static XmlSerializer createXmlSerializer(Writer out) {
 		XmlSerializer result = null;
 		try {
-			XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+			XmlPullParserFactory factory = new org.xmlpull.mxp1.MXParserFactory();
 			factory.setValidating(true);
 			result = factory.newSerializer();
-			result.setFeature("http://xmlpull.org/v1/doc/features.html#indent-output", true);
+//			result.setFeature("http://xmlpull.org/v1/doc/features.html#indent-output", true);
 			result.setOutput(out);
 		} catch (Exception e) {
 			log.error("When creating XmlSerializer: " + e.getClass().getName() + ": " + e.getMessage());
