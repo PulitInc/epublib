@@ -240,6 +240,7 @@ public class PackageDocumentReader extends PackageDocumentBase {
 			if (OPFValues.no.equalsIgnoreCase(DOMUtil.getAttribute(spineItem, NAMESPACE_OPF, OPFAttributes.linear))) {
 				spineReference.setLinear(false);
 			}
+            spineReference.setProperties(DOMUtil.getAttribute(spineItem, NAMESPACE_OPF, OPFAttributes.properties));
 			spineReferences.add(spineReference);
 		}
 		result.setSpineReferences(spineReferences);
